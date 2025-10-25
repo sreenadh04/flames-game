@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES - The Childhood Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="terminal">
+            <!-- Header -->
+            <div class="header">
+                <h1>FLAMES</h1>
+                <p class="subtitle">The Childhood Game</p>
+            </div>
+
+            <!-- Main Content -->
+            <div id="gameContent">
+                <!-- Welcome Screen -->
+                <div id="welcomeScreen" class="screen active">
+                    <div class="welcome-box">
+                        <p class="prompt">Do you want to know about the FLAMES game? (y/n)</p>
+                        <div class="button-group">
+                            <button class="btn btn-yes" onclick="showExplanation()">Yes</button>
+                            <button class="btn btn-no" onclick="startGame()">No</button>
+                        </div>
+                    </div>
+                    <div id="explanationBox" class="explanation-box hidden">
+                        <p>FLAMES is a fun game to predict relationship types between two people.</p>
+                        <p><strong>F</strong> = Friends | <strong>L</strong> = Lovers | <strong>A</strong> = Affectionate</p>
+                        <p><strong>M</strong> = Marriage | <strong>E</strong> = Enemies | <strong>S</strong> = Siblings</p>
+                        <button class="btn btn-primary" onclick="startGame()">Continue to Game</button>
+                    </div>
+                </div>
+
+                <!-- Game Screen -->
+                <div id="gameScreen" class="screen">
+                    <div class="input-box">
+                        <label for="name1" class="prompt">Enter first person name:</label>
+                        <input type="text" id="name1" placeholder="Name 1" class="input-field">
+                        
+                        <label for="name2" class="prompt">Enter second person name:</label>
+                        <input type="text" id="name2" placeholder="Name 2" class="input-field">
+                        
+                        <button class="btn btn-primary" onclick="playGame()">Calculate FLAMES</button>
+                    </div>
+                </div>
+
+                <!-- Result Screen -->
+                <div id="resultScreen" class="screen">
+                    <div class="result-box">
+                        <p id="resultMessage" class="result-message"></p>
+                        <p id="resultEmoji" class="result-emoji"></p>
+                        <button class="btn btn-primary" onclick="playAgain()">Play Again</button>
+                        <button class="btn btn-secondary" onclick="showReferences()">Show References</button>
+                    </div>
+                </div>
+
+                <!-- References Screen -->
+                <div id="referencesScreen" class="screen">
+                    <div class="references-box">
+                        <h2>FLAMES Game - References & Inspiration</h2>
+                        <ul class="references-list">
+                            <li>1. Remove Spaces (Basic) - GFG</li>
+                            <li>2. Capitalize the Title (Easy) - LeetCode 2129</li>
+                            <li>3. Longest Common Subsequence (Medium) - GFG</li>
+                            <li>4. Josephus Problem (Easy) - GFG</li>
+                        </ul>
+                        <p class="references-note">This game is inspired by these classic DSA problems!</p>
+                        <button class="btn btn-primary" onclick="backToWelcome()">Back to Home</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>Thanks for playing FLAMES! ❤️</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
